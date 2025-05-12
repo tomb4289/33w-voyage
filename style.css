@@ -110,8 +110,7 @@ body {
 .hero {
   position: relative;
   height: 80vh;
-  background: url("/images/hero.jpg") center center/cover no-repeat;
-  background-color: #a31515;
+  background-color: #d1dfff;
   display: flex;
   align-items: center;
   justify-content: center;
