@@ -2,8 +2,8 @@
 
 ### Première étape du développement d'un thème WP
 
-#### Auteur : Eddy Martin
+#### Auteur : Tommy Bourgeois
 
 #### Adresse de la github-page
 
-https://eddytuto.github.io/33w-ete-25/
+https://tomb4289.github.io/33w-voyage/
