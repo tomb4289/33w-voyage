@@ -1,4 +1,12 @@
-// Description: General styles for the entire application
+/* style general */
+$color-bg: #ffffff;
+$color-primaire: #043873; // Bleu foncé
+$color-secondaire: #f4f4f4; // Gris très clair
+$color-accent: #d61d1d; // Rouge Bergeron
+$color-texte: #333;
+$color-texte-inverse: #fff;
+$font-principale: "Poppins", sans-serif;
+
 html {
   box-sizing: border-box;
 }

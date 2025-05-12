@@ -1,0 +1,25 @@
+.accueil {
+  &__section {
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+
+    &--promos {
+      background-color: lighten($color-primaire, 40%);
+    }
+
+    &--destinations {
+      background-color: $color-bg;
+    }
+
+    &--info {
+      background-color: $color-secondaire;
+    }
+  }
+
+  &__titre {
+    font-size: 2rem;
+    color: $color-primaire;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}

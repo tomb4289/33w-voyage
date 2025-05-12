@@ -1,0 +1,24 @@
+.destinations__liste {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.destination {
+  text-align: center;
+
+  &__image {
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  &__nom {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: $color-texte;
+  }
+}

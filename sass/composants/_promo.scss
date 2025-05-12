@@ -1,0 +1,27 @@
+.promos__liste {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.promo {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  &__titre {
+    font-size: 1.25rem;
+    color: $color-primaire;
+    margin-bottom: 0.5rem;
+  }
+
+  &__prix {
+    font-size: 1.1rem;
+    color: $color-accent;
+    font-weight: bold;
+  }
+}
