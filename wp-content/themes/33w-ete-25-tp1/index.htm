@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil | Club Voyage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page">
+    <header class="entete">
+      <div class="entete__contenu global">
+        <img
+          src="images/logo.png"
+          alt="Logo Club Voyage"
+          class="entete__logo"
+        />
+
+        <input type="checkbox" id="burger" class="chk__menu" />
+        <label for="burger" class="entete__burger">☰</label>
+
+        <nav class="entete__nav">
+          <ul class="entete__menu">
+            <li class="entete__menu-item"><a href="#">Accueil</a></li>
+            <li class="entete__menu-item"><a href="#">Destinations</a></li>
+            <li class="entete__menu-item"><a href="#">Promotions</a></li>
+            <li class="entete__menu-item"><a href="#">Info pratiques</a></li>
+            <li class="entete__menu-item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__overlay">
+        <div class="hero__content">
+          <h1 class="hero__title">Bienvenue au Club Voyage</h1>
+          <p class="hero__subtitle">Découvrez des destinations inoubliables</p>
+          <a href="#" class="hero__btn">Voir nos offres</a>
+        </div>
+      </div>
+    </section>
+
+    <main class="accueil global">
+      <section class="accueil__section accueil__section--promos">
+        <h2 class="accueil__titre">Nos promotions</h2>
+        <div class="promos__liste">
+          <article class="promo">
+            <h3 class="promo__titre">Cuba - Tout inclus</h3>
+            <p class="promo__prix">À partir de 799$</p>
+          </article>
+          <article class="promo">
+            <h3 class="promo__titre">Europe - Circuit 10 jours</h3>
+            <p class="promo__prix">À partir de 1999$</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="accueil__section accueil__section--destinations">
+        <h2 class="accueil__titre">Destinations populaires</h2>
+        <div class="destinations__liste">
+          <div class="destination">
+            <img
+              src="images/paris.jpg"
+              alt="Paris"
+              class="destination__image"
+            />
+            <h3 class="destination__nom">Paris</h3>
+          </div>
+          <div class="destination">
+            <img
+              src="images/mexique.jpg"
+              alt="Mexique"
+              class="destination__image"
+            />
+            <h3 class="destination__nom">Cancún</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="accueil__section accueil__section--info">
+        <h2 class="accueil__titre">Infos pratiques</h2>
+        <ul class="infos__liste">
+          <li class="infos__item">Assurances voyage disponibles</li>
+          <li class="infos__item">Documents requis selon la destination</li>
+          <li class="infos__item">Conseils de santé et sécurité</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__contenu global">
+        <p class="footer__texte">© 2025 Club Voyage. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>
