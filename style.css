@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/*
+Theme Name: thème-33w-été25
+Theme URI: https://referenced.ca
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
+Description: Thème de base développer dans le cadre du cours de Worpress
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: club-voyage
+*/
+/* Importation des  feuilles de style du thème */
+/* ============================================   variables */
+/* Base */
+/* Layout */
+/* style general */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  border: 1px solid #ccc;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.global {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ///////////////////////////// Layout .entete */
+.chk__menu {
+  display: none;
+}
+
+.chk__menu:checked ~ .entete__nav {
+  display: flex;
+  flex-direction: column;
+}
+.chk__menu:checked ~ .entete__nav .entete__menu {
+  flex-direction: column;
+}
+
+.entete {
+  background-color: rgb(5, 0, 148);
+  /*  /////////////////////// Navigation */
+}
+.entete__contenu {
+  display: flex;
+  justify-content: space-between;
+}
+.entete__logo {
+  width: 75px;
+  height: 75px;
+}
+.entete__nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 0 2rem 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .entete__nav {
+    display: none;
+  }
+}
+.entete__burger {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .entete__burger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.entete__menu {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+.entete__menu-item a {
+  display: block;
+  background-color: beige;
+}
+.entete__menu-item a:hover {
+  background-color: rgb(233, 227, 177);
+}
+
+.hero {
+  position: relative;
+  height: 80vh;
+  background-color: #d1dfff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero__content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero__btn {
+  display: inline-block;
+  background-color: #d61d1d;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.hero__btn:hover {
+  background-color: #a31515;
+}
+
+.accueil__section {
+  padding: 2rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.accueil__section--promos {
+  background-color: #4a9cf9;
+}
+.accueil__section--destinations {
+  background-color: #ffffff;
+}
+.accueil__section--info {
+  background-color: #f4f4f4;
+}
+.accueil__titre {
+  font-size: 2rem;
+  color: #043873;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ////////////////////////////////  composants */
+/**
+/////////////////////////////// Compsant .recherche
+*/
+.recherche {
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+}
+.recherche__input {
+  border: none;
+  outline: none;
+}
+.recherche__bouton {
+  border-left: 1px solid #aaa;
+}
+
+.promos__liste {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.promo {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.promo__titre {
+  font-size: 1.25rem;
+  color: #043873;
+  margin-bottom: 0.5rem;
+}
+.promo__prix {
+  font-size: 1.1rem;
+  color: #d61d1d;
+  font-weight: bold;
+}
+
+.destinations__liste {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.destination {
+  text-align: center;
+}
+.destination__image {
+  width: 250px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.destination__nom {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.infos__liste {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.infos__liste .infos__item {
+  background-color: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 5px solid #d61d1d;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=style.css.map */
