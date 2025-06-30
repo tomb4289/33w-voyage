@@ -1,9 +1,10 @@
-    <footer class="footer">
-      <div class="footer__contenu global">
-        <p class="footer__texte">© 2025 Club Voyage. Tous droits réservés.</p>
-      </div>
+<footer class="footer">
+        <div class="footer__contenu global">
+            <?php
+            // Include the footer copyright template part
+            get_template_part('template-parts/footer', 'copyright');
+            ?>
+        </div>
     </footer>
-    <?php get_footer() ?>
-      <script src="script/checkbox.js"></script>
-  </body>
-  <?php wp_footer(); ?>
+</body>
+<?php wp_footer(); ?>
