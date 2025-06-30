@@ -1,22 +1,21 @@
 @charset "UTF-8";
-/*
-Theme Name: thème-33w-été25
-Theme URI: https://referenced.ca
-Author: Eddy Martin
-Author URI: https://github.com/eddytuto
-Description: Thème de base développer dans le cadre du cours de Worpress
-Version: 1.0
-Tested up to: 6.2
-Requires PHP: 7.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: club-voyage
-*/
-/* Importation des  feuilles de style du thème */
-/* ============================================   variables */
+
+/* ============================================ Variables */
+:root {
+  --color-primary-blue: #0a224d; /* Deep Blue for header, footer */
+  --color-secondary-red: #e74c3c; /* Vibrant Red for accents, buttons */
+  --color-accent-yellow: #f1c40f; /* Bright Yellow for highlights, links */
+  --color-light-gray: #ecf0f1; /* Light background */
+  --color-dark-text: #34495e; /* Dark gray for main text */
+  --color-white: #ffffff;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Base */
-/* Layout */
-/* style general */
 html {
   box-sizing: border-box;
 }
@@ -25,26 +24,35 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-* {
-  border: 1px solid #ccc;
+  /* Removed debugging border: */
+  /* border: 1px solid #ccc; */
 }
 
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: var(--color-light-gray);
+  color: var(--color-dark-text);
+}
+
+a {
+  color: var(--color-secondary-red);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary-blue);
+  text-decoration: underline;
 }
 
 .global {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 900px;
+  max-width: 1200px; /* Increased max-width for modern feel */
   margin: 0 auto;
+  padding: 0 var(--spacing-md);
 }
 
 /* ///////////////////////////// Layout .entete */
@@ -52,6 +60,7 @@ body {
   display: none;
 }
 
+/* Mobile navigation toggle */
 .chk__menu:checked ~ .entete__nav {
   display: flex;
   flex-direction: column;
@@ -61,204 +70,401 @@ body {
 }
 
 .entete {
-  background-color: rgb(5, 0, 148);
-  /*  /////////////////////// Navigation */
+  background-color: var(--color-light-gray);
+  color: var(--color-white);
+  padding: var(--spacing-sm) 0;
+  box-shadow: var(--box-shadow);
 }
 .entete__contenu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 .entete__logo {
-  width: 75px;
-  height: 75px;
+  width: 60px; /* Slightly smaller logo */
+  height: 60px;
+  border-radius: 50%; /* Make it round */
+  background-color: var(
+    --color-accent-yellow
+  ); /* Yellow background for logo area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--color-primary-blue);
+  font-size: 1.2rem;
+  overflow: hidden; /* Hide any overflow from img if it's there */
+}
+.entete__logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 .entete__nav {
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap;
-  margin: 0 2rem 0 auto;
+  flex-grow: 1; /* Allow navigation to take available space */
+  margin-left: var(--spacing-md);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+  /* Adjusted breakpoint for nav collapse */
   .entete__nav {
-    display: none;
+    display: none; /* Hide by default on smaller screens */
+    width: 100%; /* Take full width when shown */
+    margin-top: var(--spacing-sm);
   }
 }
 .entete__burger {
   display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 5px;
+  color: var(--color-white);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .entete__burger {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
   }
 }
 .entete__menu {
   display: flex;
   list-style-type: none;
-  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-sm);
+}
+@media screen and (max-width: 768px) {
+  .entete__menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
 }
 .entete__menu-item a {
   display: block;
-  background-color: beige;
+  padding: 0.8rem 1.2rem;
+  background-color: var(
+    --color-secondary-red
+  ); /* Red background for nav items */
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
 }
 .entete__menu-item a:hover {
-  background-color: rgb(233, 227, 177);
+  background-color: var(--color-accent-yellow); /* Yellow on hover */
+  color: var(--color-primary-blue);
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
+/* Hero Section */
 .hero {
   position: relative;
-  height: 80vh;
-  background-color: #d1dfff;
+  height: 70vh; /* Slightly reduced height */
+  background-color: var(
+    --color-primary-blue
+  ); /* Default background if image fails */
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.hero__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.hero__content {
-  position: relative;
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure hero content is centered and visible */
+.hero__contenu {
+  /* Updated from hero__content to match user's actual hero.php output */
+  position: relative;
+  z-index: 2; /* Above any potential overlay */
   max-width: 800px;
-  padding: 2rem;
+  padding: var(--spacing-md);
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Subtle overlay for text readability */
+  border-radius: var(--border-radius);
 }
 
-.hero__title {
-  font-size: 3rem;
+.hero__titre {
+  /* Updated from hero__title */
+  font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.1;
+  color: var(--color-accent-yellow); /* Yellow title for impact */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero__subtitle {
+.hero__description {
+  /* Updated from hero__subtitle */
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-white);
+}
+
+.hero p {
+  /* For author/address lines */
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Main Content Sections */
+.site-main {
+  padding: var(--spacing-lg) 0;
+}
+
+.populaire {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--box-shadow);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  padding: 0 var(--spacing-md);
+}
+
+.page-title,
+.accueil__titre {
+  font-size: 2.8rem;
+  color: var(--color-primary-blue);
+  font-weight: 700;
+  position: relative;
+  display: inline-block; /* For underline effect */
+}
+.page-title::after,
+.accueil__titre::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background-color: var(--color-secondary-red);
+  border-radius: 5px;
+}
+
+/* Cards (Destination & Promo) */
+.conteneur__carte {
+  /* Applies to carte.php output */
+  background-color: var(--color-light-gray);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 320px; /* Max width for individual cards */
+  margin: var(--spacing-sm); /* Spacing around cards */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: var(--spacing-sm); /* Padding for content below image */
+}
+.conteneur__carte:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.conteneur__carte img {
+  width: 100%;
+  height: 200px; /* Uniform image height */
+  object-fit: cover;
+}
+.conteneur__carte h2 {
+  font-size: 1.8rem;
+  color: var(--color-primary-blue);
+  margin: var(--spacing-sm);
+  text-align: center;
+}
+.conteneur__carte p {
+  font-size: 0.95rem;
+  color: var(--color-dark-text);
+  margin: 0 var(--spacing-sm) 0.5rem;
+  text-align: center;
+}
+.conteneur__carte p strong {
+  color: var(--color-secondary-red);
+}
+
+/* Single Post Specific Styles */
+.site-main article {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: var(--spacing-md);
+}
+.site-main article h1 {
+  font-size: 3rem;
+  color: var(--color-primary-blue);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+.site-main article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto var(--spacing-md);
+  border-radius: var(--border-radius);
+}
+.entry-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+.destination-details-full {
+  background-color: var(--color-light-gray);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-md);
+  border-left: 5px solid var(--color-secondary-red);
+}
+.destination-details-full h3 {
+  color: var(--color-primary-blue);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
   font-size: 1.5rem;
-  margin-bottom: 2rem;
 }
-
-.hero__btn {
+.destination-details-full p {
+  margin-bottom: 0.5rem;
+}
+.destination-categories-full {
+  margin-top: var(--spacing-md);
+  border-top: 1px dashed var(--color-dark-text);
+  padding-top: var(--spacing-md);
+}
+.destination-categories-full p {
+  font-weight: bold;
+  color: var(--color-primary-blue);
+}
+.destination-categories-full a {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-primary-blue);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
   display: inline-block;
-  background-color: #d61d1d;
-  color: white;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 8px;
+  margin-bottom: 0.5rem;
   transition: background-color 0.3s ease;
 }
-
-.hero__btn:hover {
-  background-color: #a31515;
+.destination-categories-full a:hover {
+  background-color: var(--color-secondary-red);
+  color: var(--color-white);
+  text-decoration: none;
 }
 
-.accueil__section {
-  padding: 2rem 0;
-  border-bottom: 1px solid #ddd;
-}
-.accueil__section--promos {
-  background-color: #4a9cf9;
-}
-.accueil__section--destinations {
-  background-color: #ffffff;
-}
-.accueil__section--info {
-  background-color: #f4f4f4;
-}
-.accueil__titre {
-  font-size: 2rem;
-  color: #043873;
-  margin-bottom: 1.5rem;
+/* Footer */
+.footer {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  padding: var(--spacing-md) 0;
   text-align: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: var(--spacing-lg);
+}
+.footer__texte {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* ////////////////////////////////  composants */
-/**
-/////////////////////////////// Compsant .recherche
-*/
+/* ///////////////////////////// Compsant .recherche (basic styling) */
 .recherche {
-  border: 1px solid #aaa;
+  border: 2px solid var(--color-primary-blue);
   display: flex;
   align-items: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  max-width: 400px;
+  margin: var(--spacing-md) auto;
 }
 .recherche__input {
   border: none;
   outline: none;
+  padding: 0.8rem 1rem;
+  flex-grow: 1;
+  font-size: 1rem;
 }
 .recherche__bouton {
-  border-left: 1px solid #aaa;
+  background-color: var(--color-secondary-red);
+  color: var(--color-white);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.recherche__bouton:hover {
+  background-color: var(--color-primary-blue);
 }
 
-.promos__liste {
+/* Specific list flex for popular section */
+.populaire .conteneur.global {
+  /* Targeting the div in populaire.php */
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
 }
 
-.promo {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  width: 280px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.promo__titre {
-  font-size: 1.25rem;
-  color: #043873;
-  margin-bottom: 0.5rem;
-}
-.promo__prix {
-  font-size: 1.1rem;
-  color: #d61d1d;
-  font-weight: bold;
-}
-
-.destinations__liste {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .hero__titre {
+    font-size: 2.5rem;
+  }
+  .hero__description {
+    font-size: 1.1rem;
+  }
+  .page-title,
+  .accueil__titre {
+    font-size: 2rem;
+  }
+  .site-main article {
+    padding: var(--spacing-md);
+  }
+  .site-main article h1 {
+    font-size: 2.2rem;
+  }
 }
 
-.destination {
-  text-align: center;
+@media screen and (max-width: 480px) {
+  .global {
+    padding: 0 var(--spacing-sm);
+  }
+  .entete__logo {
+    width: 50px;
+    height: 50px;
+  }
+  .entete__menu-item a {
+    padding: 0.6rem 1rem;
+  }
+  .hero {
+    height: 60vh;
+  }
+  .hero__titre {
+    font-size: 2rem;
+  }
+  .hero__description {
+    font-size: 1rem;
+  }
+  .page-title,
+  .accueil__titre {
+    font-size: 1.8rem;
+  }
+  .populaire .conteneur.global {
+    gap: var(--spacing-sm);
+  }
+  .conteneur__carte {
+    max-width: 100%; /* Allow cards to stretch on very small screens */
+  }
 }
-.destination__image {
-  width: 250px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.destination__nom {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.infos__liste {
-  list-style: none;
-  padding: 0;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.infos__liste .infos__item {
-  background-color: #fff;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-left: 5px solid #d61d1d;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}/*# sourceMappingURL=style.css.map */

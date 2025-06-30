@@ -6,7 +6,7 @@
  */
 ?>
 <?php get_header() ?>
-<section class="hero" style="background-image: url('<?= get_template_directory_uri() ?>/images/acores.jpg');">
+<section class="hero" style="background-image: url('<?= get_template_directory_uri() ?>/images/hero-background.jpg');">
   <?php get_template_part("gabarit/hero"); ?>
 </section>
 <section class="populaire">
