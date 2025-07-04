@@ -8,6 +8,8 @@
 
 https://tomb4289.github.io/33w-voyage/
 
+https://gftnth00.mywhc.ca/33we_03/
+
 # 33w-voyage
 
 test commit 1
