@@ -9,13 +9,19 @@ function mon_theme_supports()
     add_theme_support('post-thumbnails');
     add_image_size('miniature', 75, 75, true); // Taille carrée
     add_theme_support('title-tag');
-    add_theme_support('menus');
+    add_theme_support('menus'); // This is already there
     add_theme_support('custom-logo', array(
         'height'      => 75,
         'width'       => 75,
         'flex-height' => true,
         'flex-width'  => true,
     ));
+
+    // Register a navigation menu location
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu', 'your-theme-textdomain' ), // This is the 'primary' location
+        // You can add more locations here if needed, e.g., 'footer' => __( 'Footer Menu', 'your-theme-textdomain' ),
+    ) );
 }
 add_action('after_setup_theme', 'mon_theme_supports');
 
@@ -71,19 +77,27 @@ function theme_tp_enqueue_styles()
     );
 
     // Dans la section « Hero » ajouter une animation sur les composants de la section « Hero » (2 point)
-    // Enqueue animation CSS (create this file: css/animations.css)
+    // Enqueue animation CSS (your css/animations.css)
+    // IMPORTANT: If you integrated animations.css content into your main Sass and compiled to style.css,
+    // then you should REMOVE this line. Otherwise, keep it.
     wp_enqueue_style( 'mytheme-animations', get_template_directory_uri() . '/css/animations.css', array(), filemtime(get_template_directory() . '/css/animations.css') );
 
-    // Enqueue animation JS (create this file: js/animations.js)
-    wp_enqueue_script( 'mytheme-animations', get_template_directory_uri() . '/js/animations.js', array(), filemtime(get_template_directory() . '/js/animations.js'), true );
+    // Enqueue animation JS (your script/animations.js)
+    wp_enqueue_script(
+        'mytheme-animations',
+        get_template_directory_uri() . '/script/animations.js', // CORRECTED PATH
+        array(),
+        filemtime(get_template_directory() . '/script/animations.js'), // CORRECTED PATH
+        true
+    );
 
-    // Enqueue Customizer live preview script (create this file: js/customizer-preview.js)
+    // Enqueue Customizer live preview script (your script/customizer-preview.js)
     if ( is_customize_preview() ) {
         wp_enqueue_script(
             'mytheme-customizer-preview',
-            get_template_directory_uri() . '/js/customizer-preview.js',
-            array( 'jquery', 'customize-preview' ), // Ensure jQuery and customize-preview are dependencies
-            filemtime(get_template_directory() . '/js/customizer-preview.js'),
+            get_template_directory_uri() . '/script/customizer-preview.js', // CORRECTED PATH
+            array( 'jquery', 'customize-preview' ),
+            filemtime(get_template_directory() . '/script/customizer-preview.js'), // CORRECTED PATH
             true
         );
     }
