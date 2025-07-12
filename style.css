@@ -141,7 +141,8 @@ a:hover {
     gap: 0;
   }
 }
-.entete__menu-item a {
+.entete__menu li a {
+  /* Targets all links within list items of .entete__menu */
   display: block;
   padding: 0.8rem 1.2rem;
   background-color: var(
@@ -152,11 +153,19 @@ a:hover {
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-weight: 500;
 }
-.entete__menu-item a:hover {
+.entete__menu li a:hover {
   background-color: var(--color-accent-yellow); /* Yellow on hover */
   color: var(--color-primary-blue);
   transform: translateY(-2px);
   text-decoration: none;
+}
+
+/* Style for the currently active menu item */
+.entete__menu .current-menu-item a,
+.entete__menu .current_page_item a {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle highlight */
 }
 
 /* Hero Section */
@@ -178,8 +187,8 @@ a:hover {
 }
 
 /* Ensure hero content is centered and visible */
-.hero__contenu {
-  /* Updated from hero__content to match user's actual hero.php output */
+.hero-content {
+  /* NEW: Matches mytheme_display_hero_content output */
   position: relative;
   z-index: 2; /* Above any potential overlay */
   max-width: 800px;
@@ -191,10 +200,16 @@ a:hover {
     0.4
   ); /* Subtle overlay for text readability */
   border-radius: var(--border-radius);
+  /* Added for centering content within flex container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero__titre {
-  /* Updated from hero__title */
+.hero-content h2 {
+  /* NEW: Targets the h2 for the title within hero-content */
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
@@ -203,17 +218,38 @@ a:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero__description {
-  /* Updated from hero__subtitle */
+.hero-content h3 {
+  /* NEW: Targets the h3 for the subtitle within hero-content */
   font-size: 1.3rem;
   margin-bottom: var(--spacing-md);
   color: var(--color-white);
 }
 
-.hero p {
-  /* For author/address lines */
+.hero-content p {
+  /* Targets regular paragraphs in hero content (like author/address if used) */
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+}
+
+/* NEW: Hero Button Styles */
+.hero-button {
+  display: inline-block;
+  background-color: var(--color-secondary-red);
+  color: var(--color-white);
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: var(--spacing-md);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+  background-color: var(--color-primary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
 }
 
 /* Main Content Sections */
@@ -372,10 +408,75 @@ a:hover {
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
   margin-top: var(--spacing-lg);
 }
-.footer__texte {
+
+/* NEW: Wrapper for all footer content */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; /* Spacing between footer elements */
+  padding: var(--spacing-sm) var(--spacing-md); /* Internal padding */
+}
+
+.footer-content p {
+  /* General styling for paragraphs in the footer, including copyright */
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-content address {
+  font-style: normal; /* Remove italic from address tag */
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-content a {
+  color: var(--color-accent-yellow); /* Yellow for links in footer */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-content a:hover {
+  color: var(--color-light-gray);
+  text-decoration: underline;
+}
+
+/* NEW: Social icons container */
+.footer-social {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  flex-direction: column; /* Stack label and icons vertically */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-social p {
+  /* Label for social icons */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.footer-social .social-icons {
+  /* Container from icone_sociaux */
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-social .social-icons a {
+  /* Individual social icon link */
+  line-height: 1; /* Remove extra space around SVG */
+}
+
+.footer-social .social-icons svg {
+  width: 28px; /* Size of social icons */
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+.footer-social .social-icons a:hover svg {
+  transform: translateY(-2px);
 }
 
 /* ///////////////////////////// Compsant .recherche (basic styling) */
@@ -445,7 +546,7 @@ a:hover {
     width: 50px;
     height: 50px;
   }
-  .entete__menu-item a {
+  .entete__menu li a {
     padding: 0.6rem 1rem;
   }
   .hero {
