@@ -4,12 +4,10 @@
 
 #### Auteur : Tommy Bourgeois
 
+#### Adresse de la page sur le serveur distant Web Hosting Canada (WHC). 
+
 #### Adresse de la github-page
 
 https://tomb4289.github.io/33w-voyage/
 
 # 33w-voyage
-
-test commit 1
-
-test commit 2 (nouveau repo encore)
