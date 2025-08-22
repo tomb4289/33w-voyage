@@ -149,6 +149,9 @@ function mytheme_customizer_dynamic_css() {
     // but if you had other social icons that rely on CSS, you'd add rules here.
     // For the SVGbox icons, the color is passed directly in the image src.
     // We'll primarily use this for the live preview for now.
+    $button_bg_color = get_theme_mod( '404_button_bg_color', '#007cba' );
+    $css .= '.erreur-404__bouton-lien { background-color: ' . esc_html( $button_bg_color ) . '; }';
+
 
     if ( ! empty( $css ) ) {
         echo '<style type="text/css" id="mytheme-customizer-css">' . $css . '</style>';

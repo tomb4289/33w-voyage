@@ -10,14 +10,12 @@
   padding: 3rem 1rem;
 }
 
-/* Center content in the middle of the page */
 .erreur-404__contenu {
   max-width: 900px;
   margin: 0 auto;
   color: #fff;
 }
 
-/* Title box */
 .erreur-404__titre {
   background: rgba(0, 0, 0, 0.2);
   padding: 1rem 1.5rem;
@@ -29,7 +27,6 @@
   display: inline-block;
 }
 
-/* Description box */
 .erreur-404__message {
   background: rgba(0, 0, 0, 0.2);
   padding: 1rem 1.5rem;
@@ -41,7 +38,6 @@
   color: #fff;
 }
 
-/* Big accueil button */
 .erreur-404__bouton {
   margin: 1.5rem 0;
 }
@@ -61,7 +57,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Center destination buttons */
 .erreur-404__menu {
   margin: 1.5rem 0;
 }
@@ -88,4 +83,81 @@
 .erreur-404__menu-lien:hover {
   background: #ffd500;
   transform: translateY(-2px);
+}
+
+.erreur-404__recherche {
+  background-color: transparent !important;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  color: #ffeb00;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .erreur-404__titre {
+    font-size: 1.8rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .erreur-404__message {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .erreur-404__bouton-lien {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .erreur-404__menu-liste {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    justify-items: center;
+  }
+
+  .erreur-404__menu-lien {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .erreur-404__recherche {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .erreur-404 {
+    padding: 2rem 1rem;
+  }
+
+  .erreur-404__titre {
+    font-size: 1.5rem;
+  }
+
+  .erreur-404__message {
+    font-size: 0.9rem;
+  }
+
+  .erreur-404__bouton-lien {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .erreur-404__menu-liste {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .erreur-404__menu-lien {
+    font-size: 0.9rem;
+  }
+
+  .erreur-404__recherche {
+    font-size: 1rem;
+  }
 }
