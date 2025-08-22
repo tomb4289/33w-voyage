@@ -82,6 +82,8 @@ function theme_tp_enqueue_styles()
     // then you should REMOVE this line. Otherwise, keep it.
     wp_enqueue_style( 'mytheme-animations', get_template_directory_uri() . '/css/animations.css', array(), filemtime(get_template_directory() . '/css/animations.css') );
 
+    wp_enqueue_style( 'mytheme-404', get_template_directory_uri() . '/css/erreur-404.css', array(), filemtime(get_template_directory() . '/css/erreur-404.css') );
+
     // Enqueue animation JS (your script/animations.js)
     wp_enqueue_script(
         'mytheme-animations',
