@@ -233,5 +233,68 @@ function mytheme_customize_register( $wp_customize ) { // Changed function name 
         'settings' => 'footer_social_icon_color',
     ) ) );
 
+    $wp_customize->add_section( 'section_404', array(
+        'title'    => __( '404 Error Page', 'mytheme' ),
+        'priority' => 30,
+        'description' => __( 'Customize the 404 error page appearance and content.', 'mytheme' ),
+    ) );
+
+    $wp_customize->add_setting( '404_background_image', array(
+        'default'           => get_template_directory_uri() . '/images/ilepalmier.jpg',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, '404_background_image_control', array(
+        'label'    => __( '404 Background Image', 'mytheme' ),
+        'section'  => 'section_404',
+        'settings' => '404_background_image',
+    ) ) );
+
+    $wp_customize->add_setting( '404_title', array(
+        'default'           => __( 'Oops! Cette page n\'existe pas.', 'mytheme' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( '404_title_control', array(
+        'label'    => __( '404 Title', 'mytheme' ),
+        'section'  => 'section_404',
+        'settings' => '404_title',
+        'type'     => 'text',
+    ) );
+
+    $wp_customize->add_setting( '404_message', array(
+        'default'           => __( 'Il semble que rien n\'ait été trouvé à cet emplacement. Peut-être essayez-vous une recherche ou retournez à la page d\'accueil ?', 'mytheme' ),
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( '404_message_control', array(
+        'label'    => __( '404 Message', 'mytheme' ),
+        'section'  => 'section_404',
+        'settings' => '404_message',
+        'type'     => 'textarea',
+    ) );
+
+    $wp_customize->add_setting( '404_button_bg_color', array(
+        'default'           => '#007cba',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '404_button_bg_color_control', array(
+        'label'    => __( 'Button Background Color', 'mytheme' ),
+        'section'  => 'section_404',
+        'settings' => '404_button_bg_color',
+    ) ) );
+
+    $wp_customize->add_setting( '404_search_bg_color', array(
+        'default'           => '#f8f9fa',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '404_search_bg_color_control', array(
+        'label'    => __( 'Search Area Background Color', 'mytheme' ),
+        'section'  => 'section_404',
+        'settings' => '404_search_bg_color',
+    ) ) );
+
 }
 add_action( 'customize_register', 'mytheme_customize_register' ); // Hook changed to new function name
