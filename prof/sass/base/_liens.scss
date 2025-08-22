@@ -1,0 +1,10 @@
+a {
+    text-decoration: none;
+    color: $couleur__lien;
+    &:hover {
+        color: $couleur__lien--fonce;
+    }
+    &:visited {
+        color: $couleur__lien--pale;
+    }
+}

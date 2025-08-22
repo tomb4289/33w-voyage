@@ -1,0 +1,50 @@
+33W - Introduction à un système de gestion de contenu
+TP2: Club de voyage – étape #2
+
+ Date de remise    étape-2 :11 juillet,  étape-3 : 22 août            
+
+Objectifs du TP2 :
+* Créer un site WordPress pour un club de voyage offrant à ses membres des voyages exclusifs vers des destinations uniques à travers le monde.
+* Organiser les destinations en différentes catégories afin de permettre aux membres de rechercher facilement des voyages en fonction de leurs préférences.
+* Concevoir un thème parent bien structuré et un design attrayant et fonctionnel qui met en valeur les offres spéciales réservées aux membres du club.
+* Concevoir le thème de façon structuré en utilisant le gestionnaire de version git pour archiver chacune des étapes de développement.
+* Déployer le site final sur un serveur de Web Hosting Canada.
+
+TP2 : Personnalisation et intégration avancée
+* Vous serez évalué sur :
+o  L’originalité de votre design, sur la qualité de l’intégration et le niveau de structure de la codification
+o L’organisation de votre dépôt
+* Chaque étape doit contenir un minimum de 5 commits
+* Un message clair pour chaque commit
+* Un readme.md spécifique pour chaque étape
+
+Étape 2 : Intégrer le Customizer WordPress
+* Objectif :
+Permettre aux utilisateurs d’adapter certains éléments du site en temps réel grâce au Customizer de WordPress.
+* Ajouter des options dans le Customizer  : 
+* Ajouter deux panneaux dans le customizer : 
+* Panneau Hero  pour personnaliser la section « Hero » ( 1 point ) 
+* Mettre à jour les informations de la section « hero ». ( 1 point )
+* Modifier l’image en arrière-plan de la section « hero » ( 1 point )
+* Modifier certaines couleurs  de la zone Hero. ( 1 point )
+* Panneau Footer pour personnaliser la section « Pied de page » ( 1 point )
+* Ajouter ou modifier les informations du pied de page minimum 3 valeurs. ( 1 point )
+* Dans la section « Hero » ajouter une animation sur les composants de la section « Hero » ( 2 point )
+* Optimiser le code en remplaçant certain template-part par des fonctions ( 2 point )
+
+* Échéance : 11 juillet
+* Valeur : 10 %
+
+
+
+582-31W – Introduction à un système de gestion de contenu
+TIM - Collège de Maisonneuve - Automne 2024
+
+
+
+
+
+
+4
+
+

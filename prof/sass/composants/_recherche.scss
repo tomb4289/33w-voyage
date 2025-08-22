@@ -1,0 +1,27 @@
+.recherche{ // form
+    display : flex;
+    align-items: center;
+    height : 1.5rem;
+    width: 13rem;
+    border : 1px solid rgba(0,0,0,0.1);
+    
+
+    &__input {
+        border: none;
+        outline:none;
+        padding : 2px;
+        background-color: rgba(0,0,0,0.01);
+        &:hover{
+            background-color: rgba(0,0,0,0.08); 
+        }
+    &::placeholder {
+        color : #555;
+        font-style: italic;
+    }       
+    }
+
+    &__img{
+        flex: 0 0 15px;
+        padding : 2px;
+    }
+}

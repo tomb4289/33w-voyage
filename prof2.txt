@@ -1,0 +1,101 @@
+33W - Introduction à un système de gestion de contenu
+TP2: Club de voyage – étape #3
+
+ Date de remise    22 août            
+
+Objectifs du TP2 :
+* Créer un site WordPress pour un club de voyage offrant à ses membres des voyages exclusifs vers des destinations uniques à travers le monde.
+* Organiser les destinations en différentes catégories afin de permettre aux membres de rechercher facilement des voyages en fonction de leurs préférences.
+* Concevoir un thème parent bien structuré et un design attrayant et fonctionnel qui met en valeur les offres spéciales réservées aux membres du club.
+* Concevoir le thème de façon structuré en utilisant le gestionnaire de version git pour archiver chacune des étapes de développement.
+* Déployer le site final sur un serveur de Web Hosting Canada.
+Personnalisation et intégration avancée
+* Vous serez évalué sur :
+o  L’originalité de votre design, sur la qualité de l’intégration et le niveau de structure de la codification
+o L’organisation de votre dépôt
+* Pour l’étape-3 vous devrez créer 10 commits
+* Un message clair pour chaque commit
+Un readme.md spécifique pour l’étape-3
+
+Étape 3 (15 points) 
+L’objectif de cette dernière étape est d’enrichir le site en ajoutant de nouvelles fonctionnalités, d’adapter celles déjà en place, tout en améliorant le design, l’adaptabilité aux différents formats d’écran et l’intégration générale du site.
+Les exigences sont les suivantes :
+* Créer un carrousel pour la section « Hero ». (2 points)
+o Le nombre d’images du carrousel peut être défini à partir du « Customizer » dans un champ texte
+o Le carrousel est dynamique, une boucle permet de générer les champs images dans le customizer.
+o Une boucle permet de générer les éléments du carrousel (images et radio bouton)
+o Le carrousel est créé à partir d’un get_template_part(). Le carrousel se trouve dans le gabarit carrousel.php
+o Le passage d’une image à l’autre est animé
+* Le texte de la zone « Hero » est animé ( 1 point)
+o Chaque changement d’image produit une animation du contenu
+* Les cartes de la section « Populaire » (1 point)
+o Contient une liste de liens catégories. Cette liste ne doit pas inclure la catégorie « Populaire »
+o Une légère transition améliore la visibilité de la carte
+o Au lieu d’un get_template_part(), l’affichage de la carte doit être généré par une fonction incluse dans le dossier  functions »
+* Cette fonction « carte($cat_a_retirer)  » doit être utilisée dans les modèles : front-page.php et category.php.
+o Le paramètre $cat_a_retirer contient la catégorie qu’il faut retirer de la liste. Ex : pour front-page.php il faut retirer « Populaire »
+* La section filtre par REST-API doit être entièrement dynamique et contenir un accordéon (2 points)
+o L’interface est originale, adaptative et permet d’accéder au contenu complet de la destination
+o L’accordéon est animé
+* Une image svg doit être utilisé pour séparer les sections de chacune des pages. (1 point)
+o Cette image peut être une ou plusieurs « vagues » ou un autres types d’images. 
+o Cette image doit être produite par une fonction et l’image est entièrement paramétrables (couleur, grandeur, positionnement) 
+o Pour le pied de page, en bonus l’image svg peut-être animée
+* Le footer dont le design et l’intégration amélioré doit contenir une image de destination sélectionnée à partir du customizer (1 point)
+* La liste des icones sociaux doit être générée par une fonction au lieu du get_template_part(). ( 1 point)
+o Les images et les liens sont sélectionnées et définis à partir du customizer
+o Chaque icône contient un lien pointant vers le site social.
+o L’icône de github fait parti de la liste et pointe vers le dépôt de votre tp2.
+* Chaque destination individuelle doit être affiché par le modèle single-post.php. Chaque destination contient : ( 1 point)
+o Une image mise en avant, si la destination ne contient pas d’image une image par défaut est utilisée.
+o Le nom de l’auteur
+o La date de publication
+o La liste des catégories
+o Le nom de la destination
+o La description complète
+
+o Les températures
+o Le niveau d’appréciation
+* Un formulaire d’inscription dans une nouvelle section de la page d’accueil (1 point)
+o Nom
+o Prénom
+o Courriel
+
+* Les modèles category.php, search.php, 404.php et header.php (1 point)
+o Le modèle category.php utilise la fonction carte() pour afficher les cartes de destinations
+o Le nombre de résultats de recherche précèdes les résultats de recherche
+o La page 404.php est claire et original
+o Le design et l’intégration de ces modèles a été amélioré depuis la version de l’étape-2 du TP2
+* Le design général et la structure du site (1 point)
+o Le design met en valeur les destinations de voyage. 
+o L’organisation des dossiers est claire et logique
+o En général le standard BEM a été bien utilisé
+o La codification SCSS, PHP et JS est bien structurée et commentée
+* Organisation des commits sur GitHub (2 points)
+o Minimum 10 commits étalés sur toute la durée de l’étape.
+o Messages de commit clairs, spécifiques, préfixés et non redondants.
+o Création d’une branche dédiée : tp2.
+o Déploiement du site sur WHC.
+o Un fichier README.md contenant :
+* L’auteur
+* Le titre du projet
+* Une description
+* Le lien vers le site hébergé sur WHC
+
+* Échéance : 22 août
+* Valeur : 15 %
+
+
+
+
+582-31W – Introduction à un système de gestion de contenu
+TIM - Collège de Maisonneuve - Automne 2024
+
+
+
+
+
+
+4
+
+

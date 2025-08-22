@@ -1,0 +1,32 @@
+/* -----------------------------------------------  Les balises de base */
+
+html{}
+body{
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+    font-size : clamp(1rem, 2.5vw, 5rem);
+}
+
+
+h2{
+    font-size : clamp(1rem, 2.5vw, 4rem);
+}
+h3{
+    font-size : clamp(.9rem, 2.5vw, 3rem);
+}
+h4{
+    font-size : clamp(.8rem, 2.5vw, 1.5rem);
+}
+h5{
+    font-size : clamp(.8rem, 2.5vw, 1.2rem);
+}
+h6{
+    font-size : clamp(.8rem, 2.5vw, 1.1rem);
+}
+
+p{
+    font-size : clamp(.8rem, 2.5vw, 1.1rem);
+}

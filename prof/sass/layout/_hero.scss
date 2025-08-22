@@ -1,0 +1,9 @@
+/* ----------------------------------------  la section hero */
+.hero {
+  min-height: 100vh;
+  // background-image: url("images/maldives.jpg");
+  &__sociaux {
+    display: flex;
+    gap: 1rem;
+  }
+}
